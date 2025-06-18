@@ -1,0 +1,81 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+  }
+}
+
+@layer components {
+  .terminal-card {
+    @apply bg-arena-secondary border border-arena-border rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-200;
+  }
+  
+  .terminal-button {
+    @apply bg-arena-orange hover:bg-arena-orange/90 text-white px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+  
+  .terminal-input {
+    @apply bg-arena-secondary border border-arena-border rounded-md px-4 py-2 text-arena-text-primary placeholder-arena-text-muted focus:border-arena-orange focus:outline-none transition-colors duration-200;
+  }
+  
+  .metric-card {
+    @apply terminal-card hover:border-arena-orange/30 transition-all duration-300;
+  }
+  
+  .tab-active {
+    @apply border-b-2 border-arena-orange text-arena-text-primary;
+  }
+  
+  .tab-inactive {
+    @apply border-b-2 border-transparent text-arena-text-secondary hover:text-arena-text-primary hover:border-arena-text-muted transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #FF5733 0%, #FFC733 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .glow-orange {
+    box-shadow: 0 0 20px rgba(255, 87, 51, 0.3);
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}
